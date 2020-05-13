@@ -14,7 +14,7 @@ Penetration testing session was conducted in order to determine Linux Web Server
 
 Conduct Nmap scan in order to find out which ports are open.
 
-![1Scan](https://user-images.githubusercontent.com/31987272/81828184-21cd0880-9557-11ea-96a6-b69a6050eb91.png)
+![](images/)
 
 _Fig: 1 | Nmap Scan finding._
 
