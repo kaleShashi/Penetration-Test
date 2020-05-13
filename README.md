@@ -14,8 +14,10 @@ Penetration testing session was conducted in order to determine Linux Web Server
 Conduct Nmap scan in order to find out which ports are open.
 
 ![](images/1Scan.PNG)
+_Fig: 1 | Nmap scan foud open port._
 
 ![](images/2scan.PNG)
+_Fig: 2 | Nmap scan foud open port._
 
 Two ports identified after the Nmap scan,
 
@@ -29,30 +31,29 @@ Two ports identified after the Nmap scan,
 
 After the Nmap Scan tried to find a vulnerability inside the server. Using open port tcp/80 (Open HTTP) try to brows the **10.10.10.185** server.
 
-![](images/3image page.PNG)
+![](https://user-images.githubusercontent.com/31987272/81840473-af642480-9566-11ea-8bbd-cf2543159ec6.PNG)
 
 _Fig: 3 | Home page of the server._
 
 There is a login. Tried to bypass the login and can successfully bypass the login using SQL Injection to the password filed. In this password field vulnerable to SQL Injection.
 
-![](images/4password bypass.PNG)
+![](https://user-images.githubusercontent.com/31987272/81840701-fd792800-9566-11ea-91d6-301f384ad4bc.PNG)
 
 _Fig: 4 | SQL Injection to Password Field._
 
 It&#39;s directed to the image uploading page. In this they allowed only jpg, jpeg, png image file formats.
 
-![](images/ 5image upload.PNG)
+![](https://user-images.githubusercontent.com/31987272/81840857-2d283000-9567-11ea-9e82-d06409637365.PNG)
 
 _Fig: 5 | image uploading field._
 
-![](images/ 6image format.PNG)
+![](https://user-images.githubusercontent.com/31987272/81841066-7b3d3380-9567-11ea-9e35-5038f8f41384.PNG)
 
 _Fig: 6 | Allowed image formats._
 
 Then using this upload an image step try do an exploit so that inserting a payload to the image. Using exiftool.
 
-![](images/7image folder create.PNG)
-
+![](https://user-images.githubusercontent.com/31987272/81841075-7f695100-9567-11ea-8f95-c11e44ac6af6.PNG)
 _Fig: 7 | Payload with image._
 
 Then this need to run using PHP so that change the file format as _ **php.jpg** __._ This only check the last format because of the weakness of the verification so easily can upload the image.
