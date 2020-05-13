@@ -1,26 +1,5 @@
-![](RackMultipart20200513-4-jxqdjd_html_e3d9854a51526dc4.gif)
+# LINUX WEB SERVER 10.10.10.185 VULNERABILITY and EXPLOITATION
 
-![](RackMultipart20200513-4-jxqdjd_html_17f630b04b0aaaec.gif)
-
-IT16152106 | Shashiprabha W.K
-
-Year 04 Semester 02
-
-# Table of Contents
-
-[Introduction 2](#_Toc40190159)
-
-[Methodology 2](#_Toc40190160)
-
-[Reconnaissance 2](#_Toc40190161)
-
-[Exploitation 4](#_Toc40190162)
-
-[Proof 9](#_Toc40190163)
-
-[Command used 10](#_Toc40190164)
-
-[Conclusion 10](#_Toc40190165)
 
 # Introduction
 
@@ -37,15 +16,12 @@ Conduct Nmap scan in order to find out which ports are open.
 
 ![1Scan](https://user-images.githubusercontent.com/31987272/81828184-21cd0880-9557-11ea-96a6-b69a6050eb91.png)
 
-_Fig: 1 | Nmap Scan._
+_Fig: 1 | Nmap Scan finding._
 
- ![](RackMultipart20200513-4-jxqdjd_html_f0203b44cbf3f512.png)
+![2scan](https://user-images.githubusercontent.com/31987272/81832653-64ddaa80-955c-11ea-8e87-148575326458.png)
 
-![](RackMultipart20200513-4-jxqdjd_html_73ad5a51ff318199.gif)
+_Fig: 2 | Nmap Scan finding._
 
-_Fig: 2 | Nmap Scan._
-
- ![](RackMultipart20200513-4-jxqdjd_html_f9047f6b8a174407.png)
 
 Two ports identified after the Nmap scan,
 
@@ -53,7 +29,6 @@ Two ports identified after the Nmap scan,
 
 - **80/tcp – Open HTTP**
 
-![](RackMultipart20200513-4-jxqdjd_html_669be207f4d4d3ec.gif)
 
 nmap -sC -sV -V 10.10.10.185
 
